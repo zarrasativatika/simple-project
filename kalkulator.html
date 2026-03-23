@@ -1,0 +1,58 @@
+<!Doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Kalkulator Biasa</title>
+  </head>
+  <body>
+    <h1>Kalkulator</h1>
+    <input type="text" id="layar" readonly placeholder="0">
+    <br>
+    <button onclick="tekanTombol('7')">7</button>
+    <button onclick="tekanTombol('8')">8</button>
+    <button onclick="tekanTombol('9')">9</button>
+    <button onclick="tekanTombol('+')">+</button>
+    <br>
+    <button onclick="tekanTombol('4')">4</button>
+    <button onclick="tekanTombol('5')">5</button>
+    <button onclick="tekanTombol('6')">6</button>
+    <button onclick="tekanTombol('-')">-</button>
+    <br>
+    <button onclick="tekanTombol('1')">1</button>
+    <button onclick="tekanTombol('2')">2</button>
+    <button onclick="tekanTombol('3')">3</button>
+    <button onclick="tekanTombol('*')">*</button>
+    <br>
+    <button onclick="tekanTombol('0')">0</button>
+    <button onclick="tekanTombol('.')">.</button>
+    <button onclick="hitungHasil()">=</button>
+    <button onclick="tekanTombol('/')">÷</button>
+    <br>
+    <button onclick="hapusSemua()">AC</button>
+    <button onclick="hapusSatu()">⌫</button>
+    <!--JAVASCRIPT-->
+    <script>
+      function tekanTombol(nilai){
+        let layar = document.getElementById('layar');
+        layar.value = layar.value + nilai;
+      }
+      function hitungHasil(){
+        let layar = document.getElementById('layar');
+        let isiLayar = layar.value;
+        if (isiLayar === ''){
+          return;
+      }
+        let hasil = eval(isiLayar);
+        layar.value = hasil;
+      }
+      function hapusSemua(){
+        let layar = document.getElementById('layar');
+        layar.value = '';
+      function hapusSatu(){
+        let layar = document.getelementById('layar');
+        let isiLayar = layar.value
+        layar.value = isiLayar.slice(0, -1);
+      }
+    </script>
+  </body>
+</html>
